@@ -10,7 +10,6 @@ This work introduces the first automated system for generating structured medica
 
 ![Framework Overview](images/framework.png)
 
-
 ## Clinical Attributes
 
 Our system evaluates the etiology prediction plus 25 clinically relevant perceptual voice attributes:
@@ -28,7 +27,6 @@ Our system evaluates the etiology prediction plus 25 clinically relevant percept
 - `MERaLiON-2`: https://huggingface.co/MERaLiON/MERaLiON-2-10B
 - `Granite-Speech`: https://huggingface.co/ibm-granite/granite-speech-3.3-8b
 
-
 ## Methodology
 
 - **Dataset**: Speech Accessibility Project (SAP) with synthesized clinical reports
@@ -42,3 +40,18 @@ Our system evaluates the etiology prediction plus 25 clinically relevant percept
 2. Comparative analysis of 4 state-of-the-art SpeechLLMs
 3. Investigation of Chain-of-Thought reasoning and prompt ensembling
 4. Order-of-magnitude performance improvement over classification baselines
+
+
+## Hyperparameters and Setup
+We used the following hyperparameters for training our models:
+- Learning Rate: $2e-5$
+- Batch Size per GPU: $4$
+- Epochs: $3$
+- LoRA Rank: $128$
+- LoRA Alpha: $256$
+- LoRA Dropout: $0.1$
+- Weight Decay: $0.001$
+- Warmup Steps: $100$
+- Optimizer: $AdamW$
+- Mixed Precision: $FP16$
+- Gradient Accumulation Steps: $4$
